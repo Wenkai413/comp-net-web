@@ -1,0 +1,54 @@
+# 注册
+POST http://localhost:8081/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lys",
+  "email": "xxx@xxx.com",
+  "password": "123456",
+  "introduction": "613",
+  "birthday": "1970-01-01",
+  "gender": "FEMALE"
+}
+
+###
+
+# 登陆
+GET http://localhost:8081/sign-in?email=xxx@xxx.com&password=123456
+Accept: application/json
+
+###
+
+# 创建博客
+POST http://localhost:8081/blogs?title=test-5&content=content of test-5
+
+###
+
+# 更新博客
+
+PUT http://localhost:8081/blogs?blog_id=1&content=content of test-1.1
+
+###
+PUT http://localhost:8081/blogs?blog_id=1&title=test-1.1
+
+###
+
+GET http://localhost:8081/blogs?keyword=test-3
+
+###
+
+# 创建评论
+POST http://localhost:8081/comments?comment=nb&blogId=1
+
+
+###
+
+# 创建回复
+POST http://localhost:8081/replies?content=nb*2&commentId=1
+
+###
+
+# 点赞博客
+
+PUT http://localhost:8081/blogs/like?blogId=1

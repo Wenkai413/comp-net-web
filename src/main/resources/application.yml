@@ -1,0 +1,17 @@
+# 配置（最基本的数据库 ，数据库的driver、用户名、密码、ip、端口）
+
+server:
+  port: 8081
+
+#8081是端口，前端通信需要通过ip地址和8081端口来定位到服务器进程
+spring:
+  datasource:
+    #172.19.240.226是ip，3306是端口（mySQL默认的端口）,inet_comput_web是数据库的名字，？后面的是一些选项
+    url: jdbc:mysql://localhost:3306/inet_comput_web?setUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
